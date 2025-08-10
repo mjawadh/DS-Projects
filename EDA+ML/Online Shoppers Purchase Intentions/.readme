@@ -1,24 +1,47 @@
-Project Summary: Online Shoppers Purchase Intentions
+# Online Shoppers Purchase Intentions
 
 The objective of this project is to analyze user Browse behavior to predict whether a user will complete a purchase during an online shopping session. We accomplished this by combining detailed Exploratory Data Analysis (EDA) with a powerful machine learning model, XGBoost, to uncover insights and build an accurate predictive model.
 
-1. Data Cleaning & Preprocessing
-Loaded the dataset, which contained 18 behavioral features and a target variable (Revenue).
+---
 
-Categorical features (Month, VisitorType, Weekend, etc.) were encoded into a numerical format.
+### 1. Data Cleaning & Preprocessing
 
-Numerical features were scaled using StandardScaler to ensure optimal model performance.
+* Loaded the dataset, which contained 18 behavioral features and a target variable (**`Revenue`**).
+* Categorical features (**`Month`**, **`VisitorType`**, **`Weekend`**, etc.) were encoded into a numerical format.
+* Numerical features were scaled using **`StandardScaler`** to ensure optimal model performance.
 
-2. Exploratory Data Analysis (EDA)
-Sessions leading to a purchase had a significantly higher number of total pages viewed, particularly Product-Related pages.
+---
 
-Returning Visitors were the most common visitor type and had a higher likelihood of making a purchase.
+### 2. Exploratory Data Analysis (EDA)
 
-The PageValues feature was a strong indicator of purchase intent, with higher values correlating with purchases.
+* Sessions leading to a purchase had a significantly higher number of total pages viewed, particularly Product-Related pages.
+* **Returning Visitors** were the most common visitor type and had a higher likelihood of making a purchase.
+* The **`PageValues`** feature was a strong indicator of purchase intent, with higher values correlating with purchases.
 
-3. XGBoost Model & Evaluation
-Trained an XGBoost Classifier to predict purchase intent. The model was optimized using GridSearchCV.
+---
 
-The most influential features were PageValues, the month of November, BounceRates, and ExitRates.
+### 3. XGBoost Model & Evaluation
 
-The final model demonstrated strong performance, achieving a high accuracy and a robust ROC-AUC score, indicating its excellent ability to distinguish between sessions that resulted in a purchase and those that did not
+* We trained an **XGBoost Classifier** to predict purchase intent. The model was optimized using **`GridSearchCV`**.
+* The most influential features were **`PageValues`**, the month of **November**, **`BounceRates`**, and **`ExitRates`**.
+* The final model demonstrated strong performance, achieving a high accuracy and a robust **ROC-AUC score**, indicating its excellent ability to distinguish between sessions that resulted in a purchase and those that did not.
+
+---
+
+### 4. Insights & Recommendations
+
+1.  **Prioritize High-Value Pages:** 
+The **`PageValues`** feature was the single most important predictor of a purchase. 
+The business should focus on optimizing the content, design, and user experience of these specific pages to further encourage conversions.
+
+2.  **Optimize for Returning Visitors:** 
+**Returning Visitors** are the most likely to make a purchase. 
+Personalized marketing efforts, targeted promotions, and a streamlined checkout process could significantly boost sales from this key customer segment.
+
+3.  **Reduce Bounce and Exit Rates:** 
+High bounce and exit rates are strong indicators of a lost sale. 
+The company should investigate pages with high rates to understand why users are leaving. Potential solutions include improving navigation, page load speed, or simplifying the user interface.
+
+4.  **Leverage Seasonal Trends:** 
+The month of **November** was identified as a critical period. 
+The company should strategically plan its promotions, advertising, and inventory to capitalize on the increased purchase intent during the holiday shopping season.
