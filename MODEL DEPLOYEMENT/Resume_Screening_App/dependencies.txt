@@ -1,0 +1,13 @@
+streamlit
+joblib
+nltk
+PyPDF2
+docx2txt
+rapidfuzz
+pdfminer.six
+python-docx
+scikit-learn  
+pandas 
+numpy  
+matplotlib 
+seaborn  
