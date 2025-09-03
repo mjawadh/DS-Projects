@@ -57,7 +57,6 @@ This project aims to analyze **user behavioral and account data** to predict whe
 ## 📊 Technologies Used
 - **Python** (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn)
 - **Jupyter Notebook** for EDA and modeling
-- **`class_weight='balanced'`** for handling class imbalance
 
 ---
 
