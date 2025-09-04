@@ -4,6 +4,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt_tab')
 
+import os
 import streamlit as st
 import joblib
 import re
@@ -115,10 +116,6 @@ def calculate_fit_score(resume_text, job_category, threshold=85):
     score = (len(matched_skills) / len(required_skills)) * 100 if required_skills else 0
     return int(score), matched_skills
 
-
-import joblib
-import streamlit as st
-import os
 
 script_dir = os.path.dirname(__file__)
 model_path = os.path.join(script_dir, 'best_resume_classifier.joblib')
