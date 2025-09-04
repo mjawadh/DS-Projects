@@ -39,7 +39,7 @@
    ```
  2. Upload a resume file (PDF or DOCX) using the file uploader.
  3. View the predicted job role, fit score, and matched skills.
- **For more precise results increase the skills database**
+ 4. **For more precise results increase the skills database**
 
 ## Deployment
 **Streamlit Cloud**: 
