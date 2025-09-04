@@ -12,13 +12,13 @@
 - **Deployment Ready**: Designed for deployment on Streamlit Cloud or similar platforms.
 
 ## Project Structure
-- `app.py` -- Main Streamlit application script.
-- `best_resume_classifier.joblib` -- Trained Logistic Regression model file.
-- `tfidf_vectorizer.joblib` -- Trained TF-IDF vectorizer file.
-- `label_encoder.joblib` -- Label encoder for job categories (if used).
-- `preprocessed_resumes.csv` -- Preprocessed resume dataset (optional for reference).
-- `proj7.ipynb` -- Jupyter notebook with project development and testing code.
-- `requirements.txt` -- List of Python dependencies.
+- `app.py`: Main Streamlit application script.
+- `best_resume_classifier.joblib`: Trained Logistic Regression model file.
+- `tfidf_vectorizer.joblib`: Trained TF-IDF vectorizer file.
+- `label_encoder.joblib`: Label encoder for job categories (if used).
+- `preprocessed_resumes.csv`: Preprocessed resume dataset (optional for reference).
+- `proj7.ipynb`: Jupyter notebook with project development and testing code.
+- `requirements.txt`: List of Python dependencies.
 
 ## Installation
 1. Clone the repository:
@@ -43,10 +43,10 @@
 
 ## Deployment
 **Streamlit Cloud**: 
-    1. Push the repository to GitHub.
-    2. Connect the repo to Streamlit Community Cloud.
-    3. Set `app.py` as the main file and deploy.
- Ensure all `.joblib` files are committed to the repo for the app to load models correctly.
+ 1. Push the repository to GitHub.
+ 2. Connect the repo to Streamlit Community Cloud.
+ 3. Set `app.py` as the main file and deploy.
+Ensure all `.joblib` files are committed to the repo for the app to load models correctly.
 
 ## Dataset
 The app uses an open-source Resume Dataset from Kaggle:
