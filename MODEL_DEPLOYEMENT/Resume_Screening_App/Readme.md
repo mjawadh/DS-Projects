@@ -21,16 +21,16 @@ This repository contains a **Resume Screening App** designed to automate the pro
 - `requirements.txt` -- List of Python dependencies.
 
 ## Installation
--- 1. Clone the repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/mjawadh/DS-Projects/tree/main/MODEL_DEPLOYEMENT/Resume_Screening_App.git
    cd Resume_Screening_App
    ```
--- 2. Install the required dependencies:
+2. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
--- 3. Ensure all `.joblib` model files and `preprocessed_resumes.csv` are in the root directory.
+3. Ensure all `.joblib` model files and `preprocessed_resumes.csv` are in the root directory.
 
 ## Usage
 -- 1. Run the Streamlit app locally:
@@ -41,11 +41,11 @@ This repository contains a **Resume Screening App** designed to automate the pro
 -- 3. View the predicted job role, fit score, and matched skills.
 
 ## Deployment
--- **Streamlit Cloud**: 
-   -- 1. Push the repository to GitHub.
-   -- 2. Connect the repo to Streamlit Community Cloud.
-   -- 3. Set `app.py` as the main file and deploy.
--- Ensure all `.joblib` files are committed to the repo for the app to load models correctly.
+**Streamlit Cloud**: 
+    1. Push the repository to GitHub.
+    2. Connect the repo to Streamlit Community Cloud.
+    3. Set `app.py` as the main file and deploy.
+ Ensure all `.joblib` files are committed to the repo for the app to load models correctly.
 
 ## Dataset
 The app uses an open-source Resume Dataset from Kaggle:
