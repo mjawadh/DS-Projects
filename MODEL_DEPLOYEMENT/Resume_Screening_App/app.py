@@ -116,14 +116,26 @@ def calculate_fit_score(resume_text, job_category, threshold=85):
     return int(score), matched_skills
 
 
-try:
-    model = joblib.load('best_resume_classifier.joblib')
-    tfidf_vectorizer = joblib.load('tfidf_vectorizer.joblib')
-    label_encoder = joblib.load('label_encoder.joblib')
-except FileNotFoundError:
-    st.error("Model files not found. Please run the training script first.")
-    st.stop()
+import joblib
+import streamlit as st
+import os
 
+script_dir = os.path.dirname(__file__)
+model_path = os.path.join(script_dir, 'best_resume_classifier.joblib')
+vectorizer_path = os.path.join(script_dir, 'tfidf_vectorizer.joblib')
+label_encoder_path = os.path.join(script_dir, 'label_encoder.joblib')
+
+try:
+    model = joblib.load(model_path)
+    tfidf_vectorizer = joblib.load(vectorizer_path)
+    label_encoder = joblib.load(label_encoder_path)
+    st.write("Models loaded successfully.")
+except FileNotFoundError as e:
+    st.error(f"Model files not found: {e}. Ensure all .joblib files are in {script_dir}.")
+    st.stop()
+except Exception as e:
+    st.error(f"Error loading models: {e}")
+    st.stop()
 
 # Streamlit App UI
 st.set_page_config(layout="wide")
