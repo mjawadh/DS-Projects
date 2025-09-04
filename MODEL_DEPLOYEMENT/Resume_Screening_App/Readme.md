@@ -15,8 +15,8 @@
 - `app.py`: Main Streamlit application script.
 - `best_resume_classifier.joblib`: Trained Logistic Regression model file.
 - `tfidf_vectorizer.joblib`: Trained TF-IDF vectorizer file.
-- `label_encoder.joblib`: Label encoder for job categories (if used).
-- `preprocessed_resumes.csv`: Preprocessed resume dataset (optional for reference).
+- `label_encoder.joblib`: Label encoder for job categories.
+- `preprocessed_resumes.csv`: Preprocessed resume dataset.
 - `proj7.ipynb`: Jupyter notebook with project development and testing code.
 - `requirements.txt`: List of Python dependencies.
 
@@ -39,7 +39,7 @@
    ```
  2. Upload a resume file (PDF or DOCX) using the file uploader.
  3. View the predicted job role, fit score, and matched skills.
- 4. **For more precise results increase the skills database**
+ 4. **For better accuracy increase the skills database**
 
 ## Deployment
 **Streamlit Cloud**: 
