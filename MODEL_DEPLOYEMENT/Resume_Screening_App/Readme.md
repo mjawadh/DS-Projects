@@ -1,7 +1,7 @@
 # Resume Screening App
 
 ## Overview
-This repository contains a **Resume Screening App** designed to automate the process of screening resumes for various job roles. The application leverages Natural Language Processing (NLP) and machine learning to classify resumes into job categories (e.g., Data Science, Software Engineer, Web Developer, HR, Testing) and predict a fit score based on the candidate's skills and experience. It provides a user-friendly interface using Streamlit, allowing recruiters to upload resumes (PDF or DOCX) and view results instantly.
+**Resume Screening App** is designed to automate the process of screening resumes for various job roles. The application leverages Natural Language Processing (NLP) and machine learning to classify resumes into job categories (e.g., Data Science, Software Engineer, Web Developer, HR, Testing) and predict a fit score based on the candidate's skills and experience. It provides a user-friendly interface using Streamlit, allowing recruiters to upload resumes (PDF or DOCX) and view results instantly.
 
 ## Features
 - **Resume Ingestion**: Upload resumes in PDF or DOCX format.
@@ -39,6 +39,7 @@ This repository contains a **Resume Screening App** designed to automate the pro
    ```
  2. Upload a resume file (PDF or DOCX) using the file uploader.
  3. View the predicted job role, fit score, and matched skills.
+ **For more precise results increase the skills database**
 
 ## Deployment
 **Streamlit Cloud**: 
