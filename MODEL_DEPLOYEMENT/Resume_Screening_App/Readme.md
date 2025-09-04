@@ -33,12 +33,12 @@ This repository contains a **Resume Screening App** designed to automate the pro
 3. Ensure all `.joblib` model files and `preprocessed_resumes.csv` are in the root directory.
 
 ## Usage
--- 1. Run the Streamlit app locally:
+ 1. Run the Streamlit app locally:
    ```bash
    streamlit run app.py
    ```
--- 2. Upload a resume file (PDF or DOCX) using the file uploader.
--- 3. View the predicted job role, fit score, and matched skills.
+ 2. Upload a resume file (PDF or DOCX) using the file uploader.
+ 3. View the predicted job role, fit score, and matched skills.
 
 ## Deployment
 **Streamlit Cloud**: 
@@ -53,13 +53,13 @@ The app uses an open-source Resume Dataset from Kaggle:
 - **Details**: Contains ~1000+ resumes labeled with job categories (e.g., Data Science, HR, Software Engineering).
 
 ## Technologies Used
-- **Python** -- Core programming language.
-- **Streamlit** -- Web app framework.
-- **Scikit-learn** -- Machine learning and TF-IDF vectorization.
-- **NLTK** -- NLP preprocessing.
-- **PyPDF2** -- PDF text extraction.
-- **python-docx** -- DOCX text extraction.
-- **Joblib** -- Model serialization.
+- **Python**: Core programming language.
+- **Streamlit**: Web app framework.
+- **Scikit-learn**: Machine learning and TF-IDF vectorization.
+- **NLTK**: NLP preprocessing.
+- **PyPDF2**: PDF text extraction.
+- **python-docx**: DOCX text extraction.
+- **Joblib**: Model serialization.
 
 ## Contributing
 Feel free to fork this repository, submit issues, or create pull requests to improve the app. Contributions are welcome!
