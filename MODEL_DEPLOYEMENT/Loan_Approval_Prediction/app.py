@@ -4,11 +4,12 @@ import joblib
 import numpy as np
 import os
 import xgboost as xgb  # For potential XGBoost model
-
+import csv
+from datetime import datetime
 
 # Set page configuration for better layout
 st.set_page_config(layout="wide")
-st.title("🤖 Loan Approval Prediction App")
+st.title("Loan Approval Prediction App")
 
 # Load model and scaler
 script_dir = os.path.dirname(__file__)
@@ -25,8 +26,6 @@ except FileNotFoundError as e:
 except Exception as e:
     st.error(f"Error loading model or scaler: {e}")
     st.stop()
-
-
 
 # Define expected feature names based on training data
 expected_features = [
@@ -117,7 +116,34 @@ if submit_button:
             }
             for label, value in input_summary.items():
                 st.write(f"- {label}: {value}")
-        
+            
+            # Log to CSV
+            log_file = os.path.join(script_dir, 'predictions_log.csv')
+            log_data = {
+                'Timestamp': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
+                'No of Dependents': [no_of_dependents],
+                'Income Annually': [income_annum],
+                'Loan Amount': [loan_amount],
+                'Loan Term': [loan_term],
+                'CIBIL Score': [cibil_score],
+                'Residential Assets Value': [residential_assets_value],
+                'Commercial Assets Value': [commercial_assets_value],
+                'Luxury Assets Value': [luxury_assets_value],
+                'Bank Asset Value': [bank_asset_value],
+                'Education': [education],
+                'Self Employed': [self_employed],
+                'Prediction': [result],
+                'Approval Probability': [probability]
+            }
+            log_df = pd.DataFrame(log_data)
+            
+            if not os.path.exists(log_file):
+                log_df.to_csv(log_file, index=False)
+            else:
+                log_df.to_csv(log_file, mode='a', header=False, index=False)
+            
+            st.success("Prediction logged to 'predictions_log.csv'.")
+
         except Exception as e:
             st.error(f"Error during prediction: {e}")
             # Print detailed feature mismatch for debugging

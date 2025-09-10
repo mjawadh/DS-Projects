@@ -1,0 +1,2 @@
+Timestamp,No of Dependents,Income Annually,Loan Amount,Loan Term,CIBIL Score,Residential Assets Value,Commercial Assets Value,Luxury Assets Value,Bank Asset Value,Education,Self Employed,Prediction,Approval Probability
+2025-09-10 23:05:32,0,5000000,15000000,180,300,5000000,0,1000000,2000000,Graduate,Yes,Rejected,0.11
