@@ -9,9 +9,7 @@ from datetime import datetime
 
 # Set page configuration for better layout
 st.set_page_config(layout="wide")
-st.title("🤖 Loan Approval Prediction App")
-st.markdown("Enter loan application details to predict approval status and probability.")
-st.markdown("Note: Predictions and inputs are logged to a temporary file (locally or in /tmp on cloud).")
+st.title("Loan Approval Prediction App")
 
 # Load model and scaler
 script_dir = os.path.dirname(__file__)
