@@ -9,7 +9,9 @@ from datetime import datetime
 
 # Set page configuration for better layout
 st.set_page_config(layout="wide")
-st.title("Loan Approval Prediction App")
+st.title("🤖 Loan Approval Prediction App")
+st.markdown("Enter loan application details to predict approval status and probability.")
+st.markdown("Note: Predictions and inputs are logged to a temporary file (locally or in /tmp on cloud).")
 
 # Load model and scaler
 script_dir = os.path.dirname(__file__)
@@ -117,8 +119,9 @@ if submit_button:
             for label, value in input_summary.items():
                 st.write(f"- {label}: {value}")
             
-            # Log to CSV
-            log_file = os.path.join(script_dir, 'predictions_log.csv')
+            # Log to CSV (use /tmp for cloud, fallback to script_dir locally)
+            log_dir = '/tmp' if os.path.exists('/tmp') else script_dir
+            log_file = os.path.join(log_dir, 'predictions_log.csv')
             log_data = {
                 'Timestamp': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
                 'No of Dependents': [no_of_dependents],
