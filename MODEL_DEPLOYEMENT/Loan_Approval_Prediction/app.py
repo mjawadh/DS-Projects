@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 import numpy as np
 import os
-import xgboost as xgb  # For potential XGBoost model
 import csv
 from datetime import datetime
 
@@ -79,14 +78,9 @@ if submit_button:
         features = pd.DataFrame(features_dict, columns=expected_features)
         
         try:
-            # Scale features if model is not XGBoost
-            if isinstance(model, xgb.XGBClassifier):
-                prediction = model.predict(features)[0]
-                probability = model.predict_proba(features)[0][1]
-            else:
-                features_scaled = scaler.transform(features)
-                prediction = model.predict(features_scaled)[0]
-                probability = model.predict_proba(features_scaled)[0][1]
+            features_scaled = scaler.transform(features)
+            prediction = model.predict(features_scaled)[0]
+            probability = model.predict_proba(features_scaled)[0][1]
             
             # Display results
             result = 'Approved' if prediction == 1 else 'Rejected'
