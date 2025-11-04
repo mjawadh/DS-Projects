@@ -1,0 +1,29 @@
+# Core framework
+streamlit==1.39.0
+
+# NLP + Embedding Models
+spacy==3.7.2
+sentence-transformers==2.7.0
+transformers==4.46.0
+torch==2.3.1
+
+# Required for spaCy language data
+spacy-lookups-data==1.0.5
+en-core-web-sm==3.7.1
+
+# Text extraction
+pdfplumber==0.11.0
+python-docx==1.1.2
+docx2txt==0.8
+
+# Fuzzy matching & utilities
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.1
+
+# Data and visualization
+pandas==2.2.3
+matplotlib==3.9.2
+tqdm==4.66.5
+
+# Compatibility fixes
+numpy<2.0
