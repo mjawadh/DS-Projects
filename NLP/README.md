@@ -8,8 +8,8 @@ This repository contains code and resources for parsing resumes and matching the
 NLP/
 ├── .gitignore
 ├── helpers.py           # Utility functions for data processing
-├── ner.py               # NER model and training logic
-├── proj9.ipynb          # Main notebook for EDA, NER, and experiments
+├── app.py               # Application
+├── proj9.ipynb          # Main notebook for EDA, NER, training logic and experiments
 ├── requirements.txt     # Python dependencies
 ├── temp/                # Python environment and cache files
 ```
