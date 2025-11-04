@@ -6,7 +6,7 @@ import os
 import csv
 from datetime import datetime
 
-# Set page configuration for better layout
+# page layout
 st.set_page_config(layout="wide")
 st.title("Loan Approval Prediction App")
 
@@ -33,7 +33,7 @@ expected_features = [
     'bank_asset_value', 'education_ Not Graduate', 'self_employed_ Yes'
 ]
 
-# Create input form
+# input form
 st.header("Enter Loan Application Details")
 with st.form(key="loan_form"):
     col1, col2 = st.columns(2)
@@ -82,7 +82,7 @@ if submit_button:
             prediction = model.predict(features_scaled)[0]
             probability = model.predict_proba(features_scaled)[0][1]
             
-            # Display results
+            # results
             result = 'Approved' if prediction == 1 else 'Rejected'
             st.markdown("Prediction Complete!")
             st.header("Prediction Results")
@@ -93,7 +93,7 @@ if submit_button:
 
             st.markdown(f"**Approval Probability:** `{probability:.2%}`")
             
-            # Display input summary
+            # input summary
             st.subheader("Input Summary")
             input_summary = {
                 'No of Dependents': no_of_dependents,
@@ -111,7 +111,6 @@ if submit_button:
             for label, value in input_summary.items():
                 st.write(f"- {label}: {value}")
             
-            # Log to CSV (use /tmp for cloud, fallback to script_dir locally)
             log_dir = '/tmp' if os.path.exists('/tmp') else script_dir
             log_file = os.path.join(log_dir, 'predictions_log.csv')
             log_data = {
@@ -137,8 +136,6 @@ if submit_button:
             else:
                 log_df.to_csv(log_file, mode='a', header=False, index=False)
             
-            st.success("Prediction logged to 'predictions_log.csv'.")
-
         except Exception as e:
             st.error(f"Error during prediction: {e}")
             # Print detailed feature mismatch for debugging
