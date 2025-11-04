@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import pdfplumber, docx2txt
 import pandas as pd
@@ -8,7 +7,6 @@ from helpers import clean_text, extract_entities, compute_similarity, generate_f
 st.set_page_config(page_title="Resume Ranking & Match Scorer", layout="centered")
 st.title("Resume ↔ Job Match Scorer & Ranking System")
 
-# ---------- 1. Upload multiple resumes ----------
 uploaded_resumes = st.file_uploader(
     "Upload Resumes (.pdf / .docx / .txt)",
     type=["pdf", "docx", "txt"],
@@ -26,14 +24,12 @@ def extract_text(file):
     else:
         return file.read().decode("utf-8", errors="ignore")
 
-# ---------- 2. Paste Job Description ----------
 job_description = st.text_area(
     "Paste Job Description",
     height=200,
     placeholder="Enter or paste the job description here..."
 )
 
-# ---------- 3. Compute Matches ----------
 if st.button("Compute Ranking"):
     if not uploaded_resumes:
         st.warning("Please upload at least one resume.")
@@ -57,12 +53,10 @@ if st.button("Compute Ranking"):
                 "Feedback": feedback
             })
 
-        # ---------- 4. Ranking ----------
         ranked = pd.DataFrame(results).sort_values("Score", ascending=False).reset_index(drop=True)
         st.subheader("Candidate Ranking")
         st.dataframe(ranked[["Filename", "Score"]])
 
-        # ---------- 5. Bonus Visualization ----------
         st.subheader("Top Match Visualization")
         top_k = st.slider("Select number of top resumes to visualize", 3, min(10, len(ranked)), 5)
         top = ranked.head(top_k)
@@ -75,7 +69,6 @@ if st.button("Compute Ranking"):
         ax.set_title("Top Resume Matches")
         st.pyplot(fig)
 
-        # optional: detailed feedback for top resume
         best = top.iloc[0]
         st.subheader(f"Best Match: {best['Filename']}")
         st.success(f"Score: {best['Score']} / 100")
