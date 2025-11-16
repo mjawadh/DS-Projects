@@ -93,7 +93,7 @@ High-level flow:
 
 ## Repository layout
 ```
-NLP/
+Candidate_Analysis_Engine/
 ├── app/                        # Streamlit UI
 │   └── streamlit_app.py
 ├── src/                        # Package code
