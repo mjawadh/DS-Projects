@@ -99,22 +99,13 @@ NLP/
 ├── src/                        # Package code
 │   └── resume_parser/
 │       ├── __init__.py
-│       ├── preprocessing.py    # text cleaning & entity heuristics (lazy spaCy)
+│       ├── preprocessing.py    # text cleaning & entity heuristics
 │       ├── extractor.py        # pdf/docx/txt extraction helpers
-│       └── scoring.py          # similarity and feedback (lazy sentence-transformers)
-├── notebooks/                  # Exploratory notebooks
-│   └── proj9.ipynb
-├── examples/                   # Small example data
-│   └── minimal_resume.csv
-├── scripts/                    # Run/test helpers
-│   ├── run_smoke_train.py
-│   ├── run_smoke_train_runner.py
-│   └── run_tests_runner.py
-├── tests/                      # Small unit tests
-│   └── test_scoring.py
+│       └── scoring.py          # similarity and feedback
+├── notebooks/                  
+│   └── proj9.ipynb             # Exploratory notebook
 ├── assets/                     # screenshots, diagrams
 ├── requirements.txt
-├── flow.md                     # Migration & architecture notes
 └── README.md                   # This file
 ```
 
